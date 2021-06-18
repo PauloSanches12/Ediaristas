@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <FooterContainer>
         <Box sx={{ maxWidth: "400px" }}>
           <FooterTitle>Quem somos</FooterTitle>
-          <Typography variant={"body2"} sx={{ mt: 2 }}>
+          <Typography variant={"body2"} sx={{ mt: 2, textAlign: "justify" }}>
             E-Diaristas te ajuda a encontrar um profissional perfeito
             para realizar a limpeza da sua casa. Garantimos a melhor
             profissional com total segurança e praticidade! São milhares
