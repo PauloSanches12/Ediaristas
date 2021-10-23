@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "diaristas")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Diarista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,4 +54,17 @@ public class Diarista {
 
     @Column(nullable = false)
     private String codigoIbge;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Diarista diarista = (Diarista) o;
+        return id != null && Objects.equals(id, diarista.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
